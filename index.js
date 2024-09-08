@@ -2,7 +2,7 @@ const express = require("express")
 const puppeteer = require("puppeteer")
 const cors = require("cors")
 const app = express()
-const port = 5000
+const port = process.env.PORT || 5000;
 
 app.use(cors())
 
@@ -71,5 +71,5 @@ app.get("/api/ranking/:name", async (req, res) => {
 })
 
 app.listen(port, () => {
-    console.log(`Backend server running on http://localhost:${port}`)
+    console.log(`Backend server running on: ${port}`)
 })
